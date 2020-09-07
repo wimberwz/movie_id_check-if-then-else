@@ -1,33 +1,117 @@
  
 
+# Movie ID check
 
-> Open this page at [https://wimberwz.github.io/movie_id_check-if-then-else/](https://wimberwz.github.io/movie_id_check-if-then-else/)
 
-## Use as Extension
+## Step 1
 
-This repository can be added as an **extension** in MakeCode.
+In this tuorial, we will create a program that checks to see if a user is old enough to enter a pg13 movie: Super Turdinator3: Bloodfest
 
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/wimberwz/movie_id_check-if-then-else** and import
 
-## Edit this project ![Build status badge](https://github.com/wimberwz/movie_id_check-if-then-else/workflows/MakeCode/badge.svg)
+## Step 2
+Let's start by creating a "splash" to ask the user's age. 
 
-To edit this repository in MakeCode.
+```blocks
+game.splash("Please enter your age")
+```
 
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/wimberwz/movie_id_check-if-then-else** and click import
 
-## Blocks preview
+## 3
+Create an "Age" variable and set it to 0 at start. 
+```blocks
+let age = 0
+```
 
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
 
-![A rendered view of the blocks](https://github.com/wimberwz/movie_id_check-if-then-else/raw/master/.github/makecode/blocks.png)
+##4
+Let's modify our age variable to store the answer they give. 
 
-#### Metadata (used for search, rendering)
+```blocks
+game.splash("Please enter your age")
+let age = game.askForNumber("")
+```
 
-* for PXT/arcade
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+##5
+Make a new Splash to say the information we stored. 
+
+### ~ Since they entered a number, we must convert to text to "Say" it. 
+```blocks
+game.splash("Please enter your age")
+let age = game.askForNumber("")
+game.splash(convertToText(age))
+```
+
+
+##6
+Great but we actually need to check if we can admit them, which we can do as a Number. Add an if statement, and the logic to "COMPARE" if they 13 or over. 
+```blocks
+game.splash("Please enter your age")
+let age = game.askForNumber("")
+if (age >= 13) {
+    game.splash("Please enjoy the show")
+}
+
+```
+##7
+Now what should we say if they're not 13 or over?
+```blocks
+game.splash("Please enter your age")
+let age = game.askForNumber("")
+if (age >= 13) {
+    game.splash("Please enjoy the show")
+} else {
+    game.splash("Sorry, you are not permitted to see the show")
+}
+```
+
+##7
+Great now run and test your program!
+
+##8
+
+**Your turn:** 
+
+Replace the "Splash" screens with a nice sprite, so we have someone to talk to. 
+```blocks
+/**
+ * replace "Splash" with sprite
+ */
+```
+
+
+
+```ghost
+let mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`)
+mySprite.say(":)")
+```
+
+
+
+
+##9
+If you understood everything
+Proceed to the next Part of the module!
+  
+ELSE: ASK for help :)
+
+
+
+
+...
