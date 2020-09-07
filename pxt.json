@@ -1,5 +1,6 @@
 {
     "name": "Movie Id Check: If Then Else",
+    "version": "0.0.1",
     "description": "",
     "dependencies": {
         "device": "*"
